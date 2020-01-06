@@ -15,5 +15,9 @@ else {
 }
 $newTag = implode('.', $tag);
 
+if($newTag == 1) {
+    die('no initial tag');
+}
+
 $result = exec('git tag -a ' . $newTag . ' -m "Version ' . $newTag . '"');
 exec('git push origin --tags');
